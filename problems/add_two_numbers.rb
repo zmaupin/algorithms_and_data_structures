@@ -31,5 +31,5 @@ def add_two_numbers(l1, l2)
     previous, l1, l2 = current, l1&.next, l2&.next # move down the linked list
   end
 
-  dummy_head.next
+  dummy_head.next # return the linked list after the dummy head node
 end

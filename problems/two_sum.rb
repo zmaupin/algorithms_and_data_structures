@@ -13,18 +13,18 @@ algorith: iterate through array, adding `target - index1` to the hash as the key
 # @param {Integer} target
 # @return {Integer[]}
 def two_sum(nums, target)
-  hsh = {}
+  hsh = {} # initialize an empty hash
 
-  nums.each_index do |i|
-    difference = target - nums[i]
-    if hsh.has_key?(difference)
+  nums.each_index do |i| # iterate over nums using indices
+    difference = target - nums[i] # calculate the difference of target - the element at index i
+    if hsh.has_key?(difference) # if the difference is already in the hash, then return that value
       return [hsh[difference], i]
     else
-      hsh[nums[i]] = i
+      hsh[nums[i]] = i # if the difference is not in the hash, then add it
     end
   end
 
-  hsh
+  nil
 end
 
 

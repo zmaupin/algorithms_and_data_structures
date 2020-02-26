@@ -11,10 +11,6 @@ end
 def max_sum(nums, i)
   return @cache[i] = nums[0] if i == 0 # if the index is 0, we're at the start of the array and there's nothing to sum, so add that element to the cache
   return if i == nums.length # if we're at the end of the array return nil
-  puts "nums: #{nums}"
-  puts "i: #{i}"
-  puts "@cache: #{@cache}"
-  puts "max of: [(#{nums[i]} + #{max_sum(nums, i-1)}), #{nums[i]}"
   @cache[i] = [(nums[i] + max_sum(nums, i-1)), nums[i]].max # recursively find the sums of elements in the array, add the max of the sum vs the element at i 
 end
 
