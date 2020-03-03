@@ -3,20 +3,20 @@
 require_relative 'linkedlist'
 
 class HashTable
-	def initialize
-		@hashtable = []
-		@hash_value = 100
+  def initialize
+    @hashtable = []
+    @hash_value = 100
   end
 
-	def hash(key)
+  def hash(key)
     ((key.to_s.hash) * 3.14).to_i.abs
-	end
+  end
 
   def index(key)
     hash(key) % @hash_value
   end
 
-	def upsert(key, value)
+  def upsert(key, value)
     node = @hashtable[index(key)]
     if node
       while (node.next != nil)
@@ -26,9 +26,9 @@ class HashTable
     else
       @hashtable[index(key)] = Node.new(value)
     end
-	end
+  end
 
-	def get(key)
+  def get(key)
     arr = []
     node = @hashtable[index(key)]
     arr << node.value
@@ -39,11 +39,11 @@ class HashTable
     end
   end
 
-	def delete(key)
+  def delete(key)
     @hashtable[index].previous.next = nil
-	end
+  end
 
-	def print
+  def print
     arr = []
     @hashtable.each do |node|
       next if node.nil?
@@ -53,7 +53,7 @@ class HashTable
       end
       puts node.value
     end
-	end
+  end
 end
 
 hashtable = HashTable.new
