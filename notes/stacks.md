@@ -8,6 +8,16 @@ pop()  remove the most recently added item
 
 ```ruby
 class Stack
-	def 
+	def initialize
+		@stack = []
+	end
+
+	def push(value)
+	  @stack << value	
+	end
+
+	def pop()
+    @stack.pop
+	end
 end
 ```

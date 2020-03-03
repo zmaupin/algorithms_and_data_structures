@@ -17,16 +17,3 @@ upsert(key, value) # inserts or updates an entry in the hash table
 get(key)
 delete(key)
 print
-
-```ruby
-class HashTable
-	def initialize
-		@
-	end
-	
-
-	def hash(key)
-		key.to_i * 1000 % 10
-	end
-end
-```
